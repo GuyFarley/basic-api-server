@@ -2,8 +2,13 @@
 
 const express = require('express');
 const { WhiskeyModel } = require('../models');
+const notFoundHandler = require('../error-handlers/404');
+const serverErrorHandler = require('../error-handlers/500');
+const logger = require('../middleware/logger');
 
 const router = express.Router();
+
+router.use(logger);
 
 // post
 router.post('/whiskey', async (req, res, next) => {
@@ -46,5 +51,9 @@ router.delete('/whiskey/:id', async (req, res, next) => {
   console.log(deletedWhiskey);
   res.status(200).send(deletedWhiskey);
 });
+
+router.use('*', notFoundHandler);
+
+router.use(serverErrorHandler);
 
 module.exports = router;

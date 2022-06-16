@@ -1,6 +1,6 @@
 'use strict';
 
-const { sequelize, WhiskeyModel } = require('./src/models');
+const { sequelize } = require('./src/models');
 const server = require('./src/server');
 
 sequelize.sync()
