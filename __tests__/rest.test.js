@@ -19,7 +19,6 @@ let whiskeyOne = {
   proof: 90,
 };
 
-
 describe('Error Handler Tests', () => {
 
   test('404 on a bad route', async () => {
