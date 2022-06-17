@@ -2,6 +2,7 @@
 
 const { Sequelize, DataTypes } = require('sequelize');
 const whiskeySchema = require('./whiskey.schema');
+require('dotenv').config();
 
 const DATABASE_URL = process.env.NODE_ENV === 'test'
   ? 'sqlite::memory'
@@ -9,8 +10,10 @@ const DATABASE_URL = process.env.NODE_ENV === 'test'
 
 const sequelize = new Sequelize(DATABASE_URL, {
   dialectOptions: {
-    require: true,
-    rejectUnauthorized: false,
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
   },
 });
 
