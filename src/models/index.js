@@ -2,6 +2,7 @@
 
 const { Sequelize, DataTypes } = require('sequelize');
 const whiskeySchema = require('./whiskey.schema');
+const beerSchema = require('./beer.schema');
 require('dotenv').config();
 
 const DATABASE_URL = process.env.NODE_ENV === 'test'
@@ -20,8 +21,10 @@ const sequelize = new Sequelize(DATABASE_URL, {
 // create Whiskey Model
 
 const WhiskeyModel = whiskeySchema(sequelize, DataTypes);
+const BeerModel = beerSchema(sequelize, DataTypes);
 
 module.exports = {
   sequelize,
   WhiskeyModel,
+  BeerModel,
 };
