@@ -12,27 +12,42 @@ The purpose of this lab is to perform CRUD Operations on a database and test for
 
 <https://gf-basic-api-server.herokuapp.com/>
 
-<!-- CI/CD (GitHub Actions) -->
+<https://github.com/GuyFarley/basic-api-server/actions>
 
 ## Setup
 
-Database URL: postgres://sjipcsuiiovocb:311a5ab72f07f45c1e524c40d7ae9411bb2200237f5564617e63b493b62c89bb@ec2-34-198-186-145.compute-1.amazonaws.com:5432/d33n319bajtmfe
+Database URL: postgres://localhost:5432/gf401-api-app
 
 ## How to initialize/run your application (where applicable)
 
-<!-- e.g. npm start -->
+This application can be accessed through the heroku app listed above. It is only a back end server at this point, but a user can post new items via Thunderclient. Current items stored in the database can be accessed by using one of the routes noted below.
 
 ## How to use your library (where applicable)
 
 ## Features / Routes
 
-<!-- Feature One: Details of feature
-GET : /hello - specific route to hit -->
+GET all whiskeys: /whiskey
+GET one whiskey: /whiskey/<id #>
+POST one whiskey: /whiskey
+UPDATE one whiskey: /whiskey/<id #>
+DELETE one whiskey: /whiskey/<id #>
+
+GET all beers: /beer
+GET one beer: /beer/<id #>
+POST one beer: /beer
+UPDATE one beer: /beer/<id #>
+DELETE one beer: /beer/<id #>
 
 ## Tests
 
-Created tests using Jest and Supertest
+Created tests using Jest and Supertest:
+
+404 on a bad route
+404 on a bad method
+Creates one whiskey
+Gets all whiskeys
+Gets one whiskey
+Updates one whiskey
+Deletes one whiskey
 
 ## UML
-
-<!-- Link to an image of the UML for your application and response to events -->
